@@ -32,7 +32,7 @@ const HeroSection = () => {
               />
             </div>
           </h1>
-          <p className="text-[#ADB7BE] text-lg lg:text-xl mb-6">
+          <p className="text-[#ADB7BE] text-lg lg:text-xl mb-6 mr-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
             tempore nesciunt doloremque, eveniet commodi nulla.
           </p>
@@ -48,13 +48,13 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full relative bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px]">
+          <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative m-4">
             <Image
-              src="/background.png"
+              src="/nicole-bg-2.png"
               alt="hero image"
-              width={375}
-              height={375}
-              className="absolute transform -translate-x-1/4 -translate-y-1/2 top-1/3 left-1/4"
+              width={350}
+              height={350}
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             />
           </div>
         </div>

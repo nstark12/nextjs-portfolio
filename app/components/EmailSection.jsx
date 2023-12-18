@@ -34,7 +34,7 @@ const EmailSection = () => {
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
+        <h5 className="text-xl font-bold text-white my-2">Let&#39;s Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           I am currently looking for new opportunities, my inbox is always open!
         </p>

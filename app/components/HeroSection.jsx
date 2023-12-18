@@ -39,10 +39,7 @@ const HeroSection = () => {
               />
             </div>
           </h1>
-          <p className="text-[#ADB7BE] text-lg lg:text-xl mb-6 mr-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            tempore nesciunt doloremque, eveniet commodi nulla.
-          </p>
+          <p className="text-[#ADB7BE] text-lg lg:text-xl mb-6 mr-4"></p>
           <div>
             <Link href={"#contact"}>
               <button className="px-6 py-3 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-primary-950 via-primary-500 to-primary-300 text-white hover:bg-slate-200 mt-4">

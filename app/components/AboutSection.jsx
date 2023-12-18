@@ -8,21 +8,33 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>JavaScript</li>
-        <li>React.js</li>
-        <li>Next.js</li>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>MySQL</li>
-        <li>Sequelize</li>
-        <li>MongoDB</li>
-        <li>GraphQL</li>
-        <li>Apollo</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Git</li>
-      </ul>
+      <div className="flex flex-row justify-between">
+        <div>
+          <ul className="list-disc pl-2">
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+          </ul>
+        </div>
+        <div>
+          <ul className="list-disc pl-2">
+            <li>MySQL</li>
+            <li>Sequelize</li>
+            <li>MongoDB</li>
+            <li>GraphQL</li>
+            <li>Apollo</li>
+          </ul>
+        </div>
+        <div>
+          <ul className="list-disc pl-2">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
     ),
   },
   {
@@ -69,7 +81,7 @@ const AboutSection = () => {
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base md:text-lg">
+          <p className="text-base md:text-md">
             I am a full stack web developer with a passion for building
             visually-appealing, interactive, and responive web applciations. I
             have experience working with JavaScript, React.js, Next.js,

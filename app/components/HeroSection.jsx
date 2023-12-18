@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -43,14 +44,18 @@ const HeroSection = () => {
             tempore nesciunt doloremque, eveniet commodi nulla.
           </p>
           <div>
-            <button className="px-6 py-3 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-primary-950 via-primary-500 to-primary-300 text-white hover:bg-slate-200 mt-4">
-              Hire Me
-            </button>
-            <button className="px-1 py-1 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-primary-950 via-primary-500 to-primary-300 text-white mt-4">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download Resum&eacute;
-              </span>
-            </button>
+            <Link href={"#contact"}>
+              <button className="px-6 py-3 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-primary-950 via-primary-500 to-primary-300 text-white hover:bg-slate-200 mt-4">
+                Hire Me
+              </button>
+            </Link>
+            <a href={"/resume.pdf"} download="resume">
+              <button className="px-1 py-1 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-primary-950 via-primary-500 to-primary-300 text-white mt-4">
+                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+                  Download Resum&eacute;
+                </span>
+              </button>
+            </a>
           </div>
         </motion.div>
         <motion.div

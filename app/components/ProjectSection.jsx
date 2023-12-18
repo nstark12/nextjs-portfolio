@@ -1,4 +1,7 @@
+"use client";
+import { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import ProjectTag from "./ProjectTag";
 
 const projectsData = [
   {
@@ -9,6 +12,8 @@ const projectsData = [
     technology: "NextJS, React, MongoDB, Stripe, HTML/CSS",
     image: "/projects/bigpie.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/nstark12/bigpie-pizza",
+    previewUrl: "https://bigpie-pizza.vercel.app/",
   },
   {
     id: 2,
@@ -19,6 +24,9 @@ const projectsData = [
       "React, Apollo, GraphQL, Chakra UI, Cloudinary, Heroku, HTML/CSS",
     image: "/projects/scripts-login-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/lizf57/scripts-connect-coders",
+    previewUrl:
+      "https://scripts-connects-coders-15b85f76118d.herokuapp.com/login",
   },
   {
     id: 3,
@@ -29,6 +37,8 @@ const projectsData = [
       "NodeJS, Express, Sequelize, MySql2, Bcrypt, Spoonacular API, Heroku, HTML/CSS",
     image: "/projects/mycookbook-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/tjansson-ui/JobReadyResumeBuilder.git",
+    previewUrl: "https://my-cookbook-recipe-saver-55777e226eb7.herokuapp.com/",
   },
   {
     id: 4,
@@ -39,6 +49,8 @@ const projectsData = [
       "NodeJS, Express, Sequelize, MySql2, Bcrypt, PDFmake, Heroku, HTML/CSS",
     image: "/projects/careercraft-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/tjansson-ui/JobReadyResumeBuilder.git",
+    previewUrl: "https://career-craft-2e3c88d80d23.herokuapp.com/login",
   },
   {
     id: 5,
@@ -48,6 +60,8 @@ const projectsData = [
     technology: "Webpack, IndexedDB, JavaScript",
     image: "/projects/jate-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/nstark12/text-editor-pwa.git",
+    previewUrl: "https://pwa-text-editor-pwa-a311c8b77a83.herokuapp.com/",
   },
   {
     id: 6,
@@ -57,6 +71,8 @@ const projectsData = [
     technology: "NodeJS, Express, Sequelize, MySql2, Bcrypt, Heroku, HTML/CSS",
     image: "/projects/dogblog-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/nstark12/dog-blog.git",
+    previewUrl: "https://dog-blog-a03070a07329.herokuapp.com/login",
   },
   {
     id: 7,
@@ -66,6 +82,8 @@ const projectsData = [
     technology: "Third Party APIs, JavaScript, HTML/CSS",
     image: "/projects/encyclopet-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/nstark12/encyclopet",
+    previewUrl: "https://nstark12.github.io/encyclopet/",
   },
   {
     id: 8,
@@ -75,6 +93,8 @@ const projectsData = [
     technology: "JavaScript, HTML/CSS",
     image: "/projects/landmarkgolf-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/nstark12/landmark-golf",
+    previewUrl: "https://rinowood.com/",
   },
   {
     id: 9,
@@ -84,25 +104,60 @@ const projectsData = [
     technology: "JavaScript, HTML/CSS",
     image: "/projects/landmarkstudio-min.jpg",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/tjansson-ui/JobReadyResumeBuilder.git",
+    previewUrl: "https://landmarkstudio.com/",
   },
 ];
 
 const ProjectSection = () => {
+  const [tag, setTag] = useState("All");
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
   return (
-    <>
-      <h2>My Projects</h2>
-      <div>
-        {projectsData.map((project) => (
+    <section id="projects">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-u md:mb-12">
+        My Projects
+      </h2>
+
+      <div className="flex flex-row justify-center items-center gap-2 text-white py-6">
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"All"}
+          isSelected={tag === "All"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"Web"}
+          isSelected={tag === "Web"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"Mobile"}
+          isSelected={tag === "Mobile"}
+        />
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-8 md-gap-12">
+        {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}
             title={project.title}
             description={project.description}
             technology={project.technology}
             imgUrl={project.image}
+            gitUrl={project.gitUrl}
+            previewUrl={project.previewUrl}
           />
         ))}{" "}
       </div>
-    </>
+    </section>
   );
 };
 
